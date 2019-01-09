@@ -67,7 +67,7 @@ process_wet_tension_file = function(x){
     dplyr::rename(`Date / Time` = X1) %>%
     dplyr::mutate(`Date / Time` = lubridate::as_datetime(`Date / Time`,
                                                          format = "%m*%d*%Y %I:%M:%S %p",
-                                                         tz = "UTC") %>%
+                                                         tz = "America/Denver") %>%
                     as.POSIXct()) %>%
     dplyr::rename(measurement_datetime = `Date / Time`,
                   tension_lower = `Tension bottom [hPa]`,
